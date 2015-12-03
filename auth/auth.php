@@ -6,7 +6,7 @@ class auth
 
     private $mysqli;
     public $error_msg;
-    public $code;
+    private $code;
     public function login($login, $pass){                                               //logging system
         $this->mysqli = connectDB();                                                    //connecting to db
         $users = $this->mysqli->query('SELECT * FROM users WHERE login="'.$login.'"');  //looking 4 users with entered login
@@ -72,6 +72,10 @@ class auth
                                                           "' . $tmp_user['reg_date'] . '")'); //if everything is ok we add to a normal db
             $this->mysqli->query('DELETE * FROM tmp_user WHERE code="'.$code.'" ');     //delete user from tmp db
             header('Location: login.php');                                              //back to the login page
+            return true;
+        } else {
+            $this->error_msg = '<p>Invalid verification code!</p>';
+            return false;
         }
 
     }

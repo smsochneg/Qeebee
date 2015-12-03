@@ -45,6 +45,6 @@
 
         }
         if(isset($_POST['check'])) {    //validating
-            $user->verify($_POST['code']);
+            if(!($user->verify($_POST['code']))) echo $user->error_msg;
         }
     include('footer.php');

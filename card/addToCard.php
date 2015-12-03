@@ -5,7 +5,12 @@
     $mysqli = connectDB();
 
     $product = $mysqli->query('SELECT * FROM products WHERE id="'.$id.'"');
-    $cost = $product->fetch_assoc();
+    if(!($cost = $product->fetch_assoc())){ return false;}
+    if(!(isset($_SESSION['card']['productId#'.$id])))
+        $_SESSION['card']['productId#'.$id] = array();
+
+    $_SESSION['card']['productId#'.$id]['id'] = $id;
+    $_SESSION['card']['productId#'.$id]['count'] += $count;
 
 
     $_SESSION['count'] += $count;

@@ -1,6 +1,7 @@
 <?php
 include('cfg.php');     //including config file
 error_reporting(E_ALL);
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -29,7 +30,7 @@ error_reporting(E_ALL);
         else
             echo '  cost: <div class="cost-of-products" >0</div > roub .';
 
-        ?>                                                                                              //    -//-
+        ?>
             <a href="card.php"><button>Offer</button></a>
         </div>
     </div>
@@ -45,7 +46,7 @@ error_reporting(E_ALL);
                     echo '<li class="span2 logout">'.$_SESSION['login'].' (Logout)</li>';
                 else
                     echo '<a href="login.php"><li class="span2">Login</li></a>';
-            ?>                                                                                          //    -//-
+            ?>
         </ul></div>
     <div class="row span3 left-bar"></div>
     <?

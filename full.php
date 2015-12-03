@@ -12,7 +12,7 @@
             <img class="photo" src="/images/products/'.$current['img_url'].'">
             <div class="description"><pre>'.$current['description'].'</pre></div>
             <div class="buy">
-                <input type="number" value="0" id="add'.$current['id'].'" min="0">
+                <input type="number" value="1" min="1" id="add'.$current['id'].'" min="0">
                 <button name="add" class="add" value="'.$current['id'].'">add</button>
             </div>
           </div>';                                                                      //add it to the page
