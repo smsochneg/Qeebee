@@ -1,7 +1,7 @@
 <?php
 include('cfg.php');     //including config file
 error_reporting(E_ALL);
-
+#session_unset();
 ?>
 <!doctype html>
 <html lang="en">
