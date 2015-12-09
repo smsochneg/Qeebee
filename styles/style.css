@@ -108,7 +108,7 @@ a {
     text-decoration: none;
     color: #30effc;
     background: #6593fc;
-    
+    cursor: pointer;
 }
 
 .left-bar {
@@ -195,4 +195,11 @@ tr {
 td {
     border: 1px solid #000;
     width: 200px;
+}
+
+.category {
+    display: block;
+    margin: 10px;
+    color: #bb4348;
+    background: #efefef;
 }
