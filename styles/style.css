@@ -198,6 +198,8 @@ td {
 }
 
 .category {
+    width: 228px;
+    height: 18px;
     display: block;
     margin: 10px;
     color: #bb4348;

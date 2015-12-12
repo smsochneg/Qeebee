@@ -1,10 +1,10 @@
 <?php
-include('cfg.php');     //including config file
+include('admin/cfg.php');     //including config file
 error_reporting(E_ALL);
 #session_unset();
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta http-equiv="Content-Type" content="text/html; utf-8" />
     <title>QeeBee</title>

@@ -3,6 +3,7 @@
     if(isset($_GET['id'] )) {
         $mysqli = connectDB();
         $categories = $mysqli->query('SELECT * FROM categories WHERE parent="'.$_GET['id'].'"');
+        echo '<div class="row span9">';
         while($curr = $categories->fetch_assoc()) {
             echo '<a href="catalog.php?category='.$curr['category'].'">
                         <span class="category">
@@ -11,4 +12,5 @@
                  </a>
                  ';
         }
+        echo '</div>';
     }

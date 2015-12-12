@@ -1,5 +1,5 @@
 <?php
-    require('Z:/home/qeebee.ru/www/cfg.php');
+    require('Z:/home/qeebee.ru/www/admin/cfg.php');
     session_start();
     class productInfo {
         public $id, $count = 0;

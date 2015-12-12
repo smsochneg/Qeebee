@@ -25,6 +25,7 @@
                                     </div>
                                   </div>';
                         }
+                    echo '<button name="offer" class="offer">Offer</button>';
                 } else {
                     echo 'You don\'t have products in your card!';
                 }
@@ -33,3 +34,4 @@
 </span>
 
 <script src="card/change.js"></script>
+<script src="card/offer.js"></script>
