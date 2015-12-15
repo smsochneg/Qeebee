@@ -2,4 +2,4 @@
     require('header.php');
 ?>
 
-<div class="attention">Please <a href="login.php">login</a> or <a href="login.php?action=register">register</a> to watch the full description and to make your shopping</div>
+<div class="attention">Пожалуйста, <a href="login.php">авторизуйтесь</a> или <a href="login.php?action=register">зарегистрируйтесь</a> для просмотра товаров и совершения покупок!</div>

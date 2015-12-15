@@ -16,20 +16,20 @@ error_reporting(E_ALL);
 <div class="container">
     <div class="row span12 header">
         <a href="/"><img src="images/qeebee.gif" alt="" class="span3 logo"></a>
-        <div class="moto">������ ���� ��� fghrtr ��</div>
+        <div class="moto">Тут слоган</div>
         <?if(isset($_SESSION['login'])) {
             echo '<div class="offset6 span3 card">';
                                                                                            //showing a buying card
                 if (isset($_SESSION['count']))
-                    echo 'you have:<div class="count-of-products" >' . $_SESSION['count'] . '</div > products .';
+                    echo 'У вас:<div class="count-of-products" >' . $_SESSION['count'] . '</div > продуктов.';
                 else
-                    echo 'you have:<div class="count-of-products" >0</div > products .';
+                    echo 'У вас:<div class="count-of-products" >0</div > продуктов .';
 
                 if (isset($_SESSION['cost']))
-                    echo '  cost: <div class="cost-of-products" >' . $_SESSION['cost'] . '</div > roub .';
+                    echo '  На сумму: <div class="cost-of-products" >' . $_SESSION['cost'] . '</div > руб .';
                 else
-                    echo '  cost: <div class="cost-of-products" >0</div > roub .';
-                echo '<a href="card.php"><button>Offer</button></a>';
+                    echo '  На сумму: <div class="cost-of-products" >0</div > руб .';
+                echo '<a href="card.php"><button>Заказать</button></a>';
             echo '</div>';
             }
 
@@ -45,7 +45,7 @@ error_reporting(E_ALL);
             <li class="span2"></li>
             <?                                                                                          // showing login
                 if(isset($_SESSION['login']))
-                    echo '<li class="span2 logout">'.$_SESSION['login'].' (Logout)</li>';
+                    echo '<li class="span2 logout">'.$_SESSION['login'].' (Выйти)</li>';
                 else
                     echo '<a href="login.php"><li class="span2">Login</li></a>';
             ?>

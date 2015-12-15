@@ -1,5 +1,5 @@
 <?php
-    require('Z:/home/qeebee.ru/www/cfg.php');                               //cfg file with connecting to db
+    require('../admin/cfg.php');                               //cfg file with connecting to db
     class productInfo {
         public $id, $count = 0;
     }

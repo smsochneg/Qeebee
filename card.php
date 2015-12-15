@@ -20,14 +20,14 @@
                                     <img class="photo" src="/images/products/' . $current['img_url'] . '">
                                     <div class="buy">
                                         <input type="number" value="' . $val->count . '" min="1" id="add' . $current['id'] . '" min="0">
-                                        <button name="add" class="add" value="' . $current['id'] . '">add</button>
-                                        <button name="delete" class="delete" value="' . $current['id'] . '">delete</button>
+                                        <button name="add" class="add" value="' . $current['id'] . '">Изменить</button>
+                                        <button name="delete" class="delete" value="' . $current['id'] . '">Удалить</button>
                                     </div>
                                   </div>';
                         }
-                    echo '<button name="offer" class="offer">Offer</button>';
+                    echo '<button name="offer" class="offer">Оформить заказ</button>';
                 } else {
-                    echo 'You don\'t have products in your card!';
+                    echo 'Ваша корзина пуста.';
                 }
                 echo '</div>';
             ?>

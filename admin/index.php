@@ -1,5 +1,8 @@
 <?php
-    require('start.php'); // тут нарисовать админ панель
+    require('cfg.php');
+    if(!$_SESSION['admin'])
+        header('Location: adminlog.php');
+
 ?>
 
 <!doctype html>

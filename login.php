@@ -6,18 +6,18 @@
             if($_GET['action'] == 'register') { //we register
                 echo '
                       <form action="" method="post">
-                      <input type="text" name="nick" placeholder="Login" required>
-                      <input type="email" name="email" placeholder="Email" id="">
-                      <input type="password" name="pass" placeholder="Password" required>
-                      <input type="password" name="r_pass" placeholder="Repeat password" required>
-                      <input type="submit" name="register" value="Register">
+                      <input type="text" name="nick" placeholder="Логин" required>
+                      <input type="email" name="email" placeholder="E-mail" id="">
+                      <input type="password" name="pass" placeholder="Пароль" required>
+                      <input type="password" name="r_pass" placeholder="Повторите пароль" required>
+                      <input type="submit" name="register" value="Зарегистрироваться!">
                       </form>
                       ';
             }
             if($_GET['action'] == 'validate') { //we validate the register
                 echo '<form action="" method="post">
                     <input type="text" name="code" id="">
-                    <input type="submit" name="check" value="Check">
+                    <input type="submit" name="check" value="Проверить код">
                   </form>';
             }
 
@@ -25,9 +25,9 @@
         } else {  //login form if we don't have action
             echo '
                   <form action="" method="post">
-                  <input type="text" name="nick" placeholder="Login" required>
-                  <input type="password" name="pass" placeholder="Password" required>
-                  <input type="submit" name="login" value="Login">
+                  <input type="text" name="nick" placeholder="Логин" required>
+                  <input type="password" name="pass" placeholder="Пароль" required>
+                  <input type="submit" name="login" value="Авторизироваться!">
                   </form>
                   <a href="?action=register">Register</a>
                   ';

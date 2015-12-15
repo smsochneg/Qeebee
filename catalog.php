@@ -21,6 +21,6 @@
 
         }
     } else {
-        echo 'Hmmm... I can\'t find anything!';
+        echo 'Хмммм... Ничего не могу найти...';
     }
     echo '</div>';
