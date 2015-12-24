@@ -11,6 +11,8 @@
     <meta charset="UTF-8">
     <title>QeeBee | Admin Page</title>
     <link rel="stylesheet" href="styles/admin.css">
+    <script src="../jquery-2.1.4.min.js"></script>
+    <script src="logout.js"></script>
 </head>
 <body>
 <div class="container">
@@ -19,6 +21,6 @@
             <a href="products.php"><span class="btn">Продукты</span></a>
             <a href="categories.php"><span class="btn">Категории</span></a>
             <a href="offers.php"><span class="btn">Заказы</span></a>
-            <span class="logout">X</span>
+            <img src="http://galaquest.ru/images/close.png" alt="Logout" class="logout">
         </div>
         <div class="settings">

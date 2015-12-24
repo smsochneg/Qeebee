@@ -8,8 +8,8 @@
                                   <div class="name">'.$res['name'].'</div>
                                   <div class="cost">'.$res['cost'].'</div>
                                   <img class="photo" src="/images/products/'.$res['img_url'].'">
-                                  </a>
-
+                                  <button class="delete" value="'.$res['id'].'">Delete</button>
+                                  <a href="edit.php?id='.$res['id'].'"><button class="edit">Edit</button></a>
                                   </div>
 
 

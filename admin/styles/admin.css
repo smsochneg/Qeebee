@@ -43,14 +43,19 @@
     float: right;
     height: 70px;
     margin: 3px;
-    width: 60px;
-    text-align: center;
+    width: 70px;
     cursor: pointer;
-    line-height: 70px;
-    color: red;
-    text-shadow: 0 0 5px rgba(0,0,0,.8);
-    font-size: 70px;
+    opacity: .5;
 }
+
+.logout:hover {
+    opacity: .6;
+}
+
+.logout:active {
+    opacity: .5;
+}
+
 
 .product {
     display: inline-block;
