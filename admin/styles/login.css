@@ -1,0 +1,46 @@
+.container {
+    margin: auto;
+    background: url(mustache.png);
+    width: 1024px;
+    height: 1024px;
+}
+
+.login {
+    position: absolute;
+    top: 500px;
+    left: 710px;
+    height: 122px;
+    background: none;
+    text-align: center;
+    border: none;
+}
+.login:focus {
+    outline: none;
+}
+
+.password {
+    position: absolute;
+    top: 500px;
+    left: 1032px;
+    height: 122px;
+    background: none;
+    text-align: center;
+    border: none;
+}
+.password:focus {
+    outline: none;
+}
+
+.submit {
+    position: absolute;
+    top: 685px;
+    left: 724px;
+    height: 152px;
+    background: none;
+    text-align: center;
+    width: 467px;
+    border: none;
+}
+.submit:focus {
+    outline: none;
+}

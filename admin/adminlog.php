@@ -10,8 +10,6 @@
                 header('Location: index.php');
             }
 
-        } else {
-            echo 'Ошибка входа!';
         }
     }
 
@@ -22,12 +20,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Авторизация</title>
+    <link rel="stylesheet" href="styles/login.css">
 </head>
 <body>
-<form action="" method="post">
-    <input type="text" name="login" class="login" placeholder="Логин">
-    <input type="password" name="password" class="password" placeholder="Пароль">
-    <input type="submit" name="submit" class="submit" placeholder="Авторизация">
-</form>
+    <div class="container">
+        <form action="" method="post">
+            <input type="text" name="login" class="login">
+            <input type="password" name="password" class="password">
+            <input type="submit" name="submit" class="submit" value="">
+        </form>
+    </div>
 </body>
 </html>
