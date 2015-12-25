@@ -78,3 +78,10 @@ form input, form button {
     width: 188px;
     height: 150px;
 }
+
+.desc {
+    width: 250px;
+    height: 150px;
+    display: block;
+}
+

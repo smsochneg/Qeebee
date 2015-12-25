@@ -1,7 +1,7 @@
 <?php
     require('cfg.php');
     if(!$_SESSION['admin'])
-        header('Location: adminlog.php');
+        header('Location: adminlog.php');       // если не авторизировались то на страницу  авторизации
 
 ?>
 
