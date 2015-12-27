@@ -12,6 +12,7 @@
         $desc = $mysqli->real_escape_string($_POST['desc']);
         $img_url = $mysqli->real_escape_string($_FILES['load']['name']);
         $category = $mysqli->real_escape_string($_POST['categ']);
+        $availability = $mysqli->real_escape_string($_POST['available']);
 
         /*        -//-       */
         if (!$_FILES['load']['error']) {                                                                                // загрузка файла
@@ -48,7 +49,7 @@
         if ($category != $edit['category']) {                                                                          // изменение категории
             $mysqli->query('UPDATE products SET category="' . $category . '" WHERE id="' . $id . '"');
         }
-        $mysqli->query('UPDATE products SET change_date="' . date('Y-m-d') . '" WHERE id="' . $id . '"');
+        $mysqli->query('UPDATE products SET change_date="' . date('Y-m-d') . '", availability="'.$availability.'" WHERE id="' . $id . '"');
     }
 
     $products = $mysqli->query('SELECT * FROM products WHERE id="'.$id.'"');
@@ -68,6 +69,10 @@
                                       </select>
                                       <input name="load" type="file">
                                       <button class="delete" value="'.$res['id'].'">Удалить</button>
+                                      <div class="available">
+                                          <p><h3>Не доступно</h3><input type="radio" name="available" value="0"></p>
+                                          <p><h3>Доступно   </h3><input type="radio" name="available" value="1"></p>
+                                      </div>
                                       <input name="edit" type="submit" value="Редактировать">
                                       <span class="error">'.$error.'</span>
 
