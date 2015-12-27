@@ -21,6 +21,6 @@
             <a href="products.php"><span class="btn">Продукты</span></a>
             <a href="categories.php"><span class="btn">Категории</span></a>
             <a href="offers.php"><span class="btn">Заказы</span></a>
+            <a href="new.php"><span class="btn">Новый товар</span></a>
             <img src="http://galaquest.ru/images/close.png" alt="Logout" class="logout">
         </div>
-        <div class="settings">

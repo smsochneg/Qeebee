@@ -1,7 +1,7 @@
 <?php
     require('header.php');
     $mysqli = connectDB();
-    $products = $mysqli->query('SELECT * FROM products');                               //showing all products
+    $products = $mysqli->query('SELECT * FROM products ORDER BY change_date DESC');                               //showing all products
     while($res = $products->fetch_assoc()){
 
         echo '    <div class="product">

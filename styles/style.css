@@ -65,8 +65,7 @@ body {
 
 
 .product {
-    margin: 0;
-    margin-right: 12px;
+    margin: 5px;
     position: relative;
     border: solid 1px #777;
     padding: 0px;

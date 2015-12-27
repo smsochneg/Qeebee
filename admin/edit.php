@@ -45,7 +45,7 @@
             $mysqli->query('UPDATE products SET description="' . $desc . '" WHERE id="' . $id . '"');
         }
 
-        if ($category != $edit['description']) {                                                                          // изменение категории
+        if ($category != $edit['category']) {                                                                          // изменение категории
             $mysqli->query('UPDATE products SET category="' . $category . '" WHERE id="' . $id . '"');
         }
         $mysqli->query('UPDATE products SET change_date="' . date('Y-m-d') . '" WHERE id="' . $id . '"');
@@ -72,6 +72,6 @@
                                       <span class="error">'.$error.'</span>
 
                   </form>
-                                 ';     //<---- сделать форму редактирования продукта
+                                 ';
 
     }
