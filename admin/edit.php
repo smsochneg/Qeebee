@@ -49,7 +49,9 @@
         if ($category != $edit['category']) {                                                                          // изменение категории
             $mysqli->query('UPDATE products SET category="' . $category . '" WHERE id="' . $id . '"');
         }
-        $mysqli->query('UPDATE products SET change_date="' . date('Y-m-d') . '", availability="'.$availability.'" WHERE id="' . $id . '"');
+        if ($availability != $edit['availability']) {
+            $mysqli->query('UPDATE products SET change_date="' . date('Y-m-d') . '", availability="' . $availability . '" WHERE id="' . $id . '"');
+        }
     }
 
     $products = $mysqli->query('SELECT * FROM products WHERE id="'.$id.'"');
