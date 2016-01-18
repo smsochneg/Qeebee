@@ -204,3 +204,49 @@ td {
     color: #bb4348;
     background: #efefef;
 }
+
+.phone {
+    display: none;
+    position: absolute;
+    width: 1080px;
+    height: 500px;
+    background: #FFFFFF;
+    margin: auto;
+    box-shadow: 0 0 3px rgba(0,0,0,.8);
+}
+
+.phone h3 {
+
+    text-align: center;
+    margin: 5px;
+    position: absolute;
+
+}
+
+.phone .number {
+    position: relative;
+    margin: auto;
+}
+
+.phone .submit {
+    position: relative;
+    margin: auto;
+}
+
+.phone .phone_valid {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    display: block;
+    margin: 200px auto;
+}
+
+.phone .close {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    display: block;
+    float: right;
+    top: -30px;
+    background: #000000;
+}

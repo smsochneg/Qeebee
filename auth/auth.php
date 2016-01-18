@@ -80,4 +80,10 @@ class auth
 
     }
 
+    public function set_number($login, $number){
+        $this->mysqli = connectDB();
+        $number = $this->mysqli->real_escape_string($number);
+        $this->mysqli->query('UPDATE users SET telephone="'.$number.'" WHERE login="'.$login.'"');
+    }
+
 }
