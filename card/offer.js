@@ -11,12 +11,12 @@ $(function(){
             data = JSON.parse(data);
             if(data['error'] == 'phone') {
                 $('.phone').css({'display': 'block'});
-                return;
+            } else {
+                $('.card-full').html('Дождитесь звонка! Спасибо, что пользуетесь QeeBee.ru!');
+                var oldCount = $('.count-of-products'), oldCost = $('.cost-of-products');   //take DOM of fields of our card
+                $(oldCount).html(0);                          //add a new value
+                $(oldCost).html(0);
             }
-            $('.card-full').html('Дождитесь звонка! Спасибо, что пользуетесь QeeBee.ru!');
-            var oldCount = $('.count-of-products'), oldCost = $('.cost-of-products');   //take DOM of fields of our card
-            $(oldCount).html(0);                          //add a new value
-            $(oldCost).html(0);
         }
     });
 });

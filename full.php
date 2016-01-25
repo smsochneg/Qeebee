@@ -10,6 +10,7 @@
 
             <div class="name">' . $current['name'] . '</div>
             <img class="photo" src="/images/products/' . $current['img_url'] . '">
+            <div class="status"></div>                                                                                     //сделать шкалу готовности к заказу
             <div class="description"><pre>' . $current['description'] . '</pre></div>
             <div class="buy">
                 <input type="number" value="1" min="1" id="add' . $current['id'] . '" min="0">

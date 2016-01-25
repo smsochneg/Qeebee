@@ -83,7 +83,10 @@ class auth
     public function set_number($login, $number){
         $this->mysqli = connectDB();
         $number = $this->mysqli->real_escape_string($number);
-        $this->mysqli->query('UPDATE users SET telephone="'.$number.'" WHERE login="'.$login.'"');
+        $such_num = $this->mysqli->query('SELECT * FROM users WHERE telephone = "'.$number.'"');
+        if(!$such_num->fetch_assoc())
+            $this->mysqli->query('UPDATE users SET telephone="'.$number.'" WHERE login="'.$login.'"');
+        else $this->error_msg = 'Данный номер используется другим пользователем.';
     }
 
 }

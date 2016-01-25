@@ -1,10 +1,12 @@
 <?php
     include('header.php');
     include('auth/auth.php');
+    $user = new auth();
     $mysqli = connectDB();
     if(isset($_POST['phone'])){
-        $user = new auth();
+
         $user->set_number($_SESSION['login'], $_POST['number']);
+        unset($_POST);
     }
     class productInfo {
         public $id, $count = 0;
@@ -31,7 +33,7 @@
                                     </div>
                                   </div>';
                         }
-                    echo '<button name="offer" class="offer">Подтвердить заказ</button>';
+                    echo '<button name="offer" class="offer">Подтвердить заказ</button>'.$user->error_msg;
                 } else {
                     echo 'Ваша корзина пуста.';
                 }

@@ -13,6 +13,7 @@
         $img_url = $mysqli->real_escape_string($_FILES['load']['name']);
         $category = $mysqli->real_escape_string($_POST['categ']);
         $availability = $mysqli->real_escape_string($_POST['available']);
+        $opt_count = $mysqli->real_escape_string($_POST['opt_count']);
 
         /*        -//-       */
         if (!$_FILES['load']['error']) {                                                                                // загрузка файла
@@ -50,7 +51,10 @@
             $mysqli->query('UPDATE products SET category="' . $category . '" WHERE id="' . $id . '"');
         }
         if ($availability != $edit['availability']) {
-            $mysqli->query('UPDATE products SET change_date="' . date('Y-m-d') . '", availability="' . $availability . '" WHERE id="' . $id . '"');
+            $mysqli->query('UPDATE products SET availability="' . $availability . '" WHERE id="' . $id . '"');
+        }
+        if($opt_count != $edit['opt_count']){
+            $mysqli->query('UPDATE products SET opt_count="' . $opt_count . '" WHERE id="' . $id . '"');
         }
     }
 
@@ -70,7 +74,7 @@
         echo'
                                       </select>
                                       <input name="load" type="file">
-                                      <button class="delete" value="'.$res['id'].'">Удалить</button>
+                                      <input type="number" value="'.$res['opt_count'].'" name="opt_count" id="opt_count">
                                       <div class="available">
                                           <p><h3>Не доступно</h3><input type="radio" name="available" value="0"></p>
                                           <p><h3>Доступно   </h3><input type="radio" name="available" value="1"></p>
