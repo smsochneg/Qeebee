@@ -36,6 +36,11 @@ error_reporting(E_ALL);
         ?>
 
     </div>
+    <div class="search">
+        <form action="index.php" method="post">
+            <input type="search" name="query" placeholder="Поиск" id="search">
+        </form>
+    </div>
     <div class="row menu">
         <ul>
             <li class="span2"></li>
@@ -53,7 +58,7 @@ error_reporting(E_ALL);
     <div class="row span3 left-bar">
         <?
             $mysqli = connectDB();
-            $categories = $mysqli->query('SELECT * FROM categories WHERE parent="0"');
+            $categories = $mysqli->query('SELECT * FROM categories WHERE parent="0"');                  // вывод левого меню
             while($curr = $categories->fetch_assoc()){
                 echo '
                     <a href="category.php?id='.$curr['id'].'">
@@ -65,6 +70,3 @@ error_reporting(E_ALL);
             }
         ?>
     </div>
-    <?
-
-?>

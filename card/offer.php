@@ -27,7 +27,7 @@
             }
             $buyers_count = 0;
             foreach($buyers as $key){
-                $buyers_count++;
+                $buyers_count += $key;
             }
             $buyers = json_encode($buyers);
             $mysqli->query('UPDATE products SET buyers=\''.$buyers.'\', buyers_count="'.$buyers_count.'" WHERE id="'.$value->id.'"');

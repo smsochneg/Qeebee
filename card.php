@@ -3,7 +3,7 @@
     include('auth/auth.php');
     $user = new auth();
     $mysqli = connectDB();
-    if(isset($_POST['phone'])){
+    if(isset($_POST['phone'])){                                         //если у чувака нет телефона
 
         $user->set_number($_SESSION['login'], $_POST['number']);
         unset($_POST);
@@ -16,7 +16,7 @@
 ?>
 <span class="span9">
             <?
-                echo '<div class="card-full">';
+                echo '<div class="card-full">';                                                 //вывод всей карты
                 if(isset($_SESSION['card'])){
                     foreach($_SESSION['card'] as $val) {
                             $product = $mysqli->query('SELECT * FROM products WHERE id=' . $val->id);
@@ -41,11 +41,11 @@
             ?>
 </span>
 
-<div class="phone">
+<div class="phone">                                                                                        <!--   форма добавления номера телефона   !-->
     <div class="close"></div>
     <h3>Для оформления заказа вы должны указать свой номер телефона для того, чтобы наши операторы связались с вами и обсудили условия покупки.</h3>
     <form class="phone_valid" method="post">
-        <input type="number" name="number" class="number">
+        <div class="num"><div class="seven">+7</div><input type="number" name="number" class="number"></div>
         <input type="submit" name="phone" class="submit" value="Подтвердить">
     </form>
 </div>

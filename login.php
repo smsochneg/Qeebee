@@ -7,7 +7,8 @@
                 echo '
                       <form action="" method="post">
                       <input type="text" name="nick" placeholder="Логин" required>
-                      <input type="email" name="email" placeholder="E-mail" id="">
+                      <input type="email" name="email" placeholder="E-mail" id="" required>
+                      <input type="text" name="name" id="name" placeholder="ФИО" required>
                       <input type="password" name="pass" placeholder="Пароль" required>
                       <input type="password" name="r_pass" placeholder="Повторите пароль" required>
                       <input type="submit" name="register" value="Зарегистрироваться!">
@@ -40,7 +41,7 @@
             else echo $user->error_msg;
         }
         if (isset($_POST['register'])) {//registering
-            if ($user->register($_POST['nick'], $_POST['email'], $_POST['pass'], $_POST['r_pass'])) ;
+            if ($user->register($_POST['nick'], $_POST['email'], $_POST['pass'], $_POST['r_pass'], $_POST['name'])) ;
             else echo $user->error_msg;
 
         }

@@ -28,9 +28,16 @@ class auth
         unset($_SESSION['login']);                                                      //just logout
         unset($_GET['action']);
     }
-    public function register($login, $email, $pass, $r_pass)                            //registering
+    public function register($login, $email, $pass, $r_pass, $name)                            //registering
     {
         $this->mysqli = connectDB();                                                    //connecting to db
+
+        $login = $this->mysqli->real_escape_string($login);
+        $this->code = md5($login.rand(0, 100));                                     //if passwords are the same we send a code
+        $pass  = $this->mysqli->real_escape_string($pass);
+        $name  = $this->mysqli->real_escape_string($name);
+        $email = $this->mysqli->real_escape_string($email);
+        $this->code  = $this->mysqli->real_escape_string($this->code);
         $users = $this->mysqli->query('SELECT * FROM users WHERE login="' . $this->mysqli->real_escape_string($login) . '" OR email="'. $this->mysqli->real_escape_string($email) .'"'); //looking if we have such user
 
         $users = $users->fetch_assoc();
@@ -44,14 +51,15 @@ class auth
             return false;
         }
         if ($pass == $r_pass) {
-            $this->code = md5($login.rand(0, 100));                                     //if passwords are the same we send a code
+
             mail($email, 'Registration verification', $this->code);                     //<-
-            $this->mysqli->query("INSERT INTO tmp_user(login, password, email, reg_date, code)
-                                                  VALUES ('$this->mysqli->real_escape_string($login)',
-                                                          '$this->mysqli->real_escape_string($pass)',
-                                                          '$this->mysqli->real_escape_string($email)',
+            $this->mysqli->query("INSERT INTO tmp_user(login, password, _name, email, reg_date, code)
+                                                  VALUES ('$login',
+                                                          '$pass',
+                                                          '$name',
+                                                          '$email',
                                                           '".date('Y-m-d')."',
-                                                          '$this->mysqli->real_escape_string($this->code)')");            //and inserting into a temporary db
+                                                          '$this->code')");            //and inserting into a temporary db
             header('Location: login.php?action=validate');                             //and send user to a verification page
 
         } else {
@@ -65,9 +73,10 @@ class auth
         $tmp_db = $this->mysqli->query('SELECT * FROM tmp_user WHERE code="'.$this->mysqli->real_escape_string($code).'"');//looking for user with a code that user wrote
         if($tmp_user = $tmp_db->fetch_assoc()) {
 
-            $this->mysqli->query('INSERT INTO users(login, password, email, reg_date)
+            $this->mysqli->query('INSERT INTO users(login, password, _name, email, reg_date)
                                                   VALUES ("' . $tmp_user['login'] . '",
                                                           "' . $tmp_user['password'] . '",
+                                                          "' . $tmp_user['_name'] . '",
                                                           "' . $tmp_user['email'] . '",
                                                           "' . $tmp_user['reg_date'] . '")'); //if everything is ok we add to a normal db
             $this->mysqli->query('DELETE * FROM tmp_user WHERE code="'.$code.'" ');     //delete user from tmp db
